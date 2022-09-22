@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="demo.css" rel="stylesheet" />
+    <link href="demo1.css" rel="stylesheet" />
     <title>Javascript Crud Api</title>
   </head>
   <body>
-    <h2 style="text-align: center; color: rgb(196, 17, 17)">Employees</h2>
+    <h2 style="text-align: initial; color: rgb(196, 17, 17)">Users</h2>
     <a href="demo1.html"
       ><button class="btn" type="button" onclick="userCreate()">
         Create
       </button></a
-    >
+    ><br /><br /><br />
     <table id="table">
       <thead>
         <tr>
@@ -27,6 +27,34 @@
       </thead>
       <tbody id="data"></tbody>
     </table>
+    <form
+      id="form"
+      id="editForm"
+      onsubmit="event.preventDefault(setFormData(userUpdate()));"
+    >
+      <div>
+        <h2>Update Details</h2>
+        <div>
+          <input class="id" type="text" id="id" name="id" placeholder="id" />
+          <label>First Name:</label>
+          <input type="text" id="fname" name="fname" placeholder="First Name" />
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" name="lname" id="lname" placeholder="Last Name" />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="text" name="email" id="email" placeholder="Email" />
+        </div>
+        <div>
+          <label>Mobile:</label>
+          <input type="text" name="mobile" id="mobile" placeholder="Mobile" />
+        </div>
+      </div>
+      <button class="btn3" type="submit">Submit</button>
+    </form>
+
     <script src="demo.js"></script>
   </body>
 </html>
