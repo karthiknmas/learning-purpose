@@ -8,12 +8,7 @@
     <title>Javascript Crud Api</title>
   </head>
   <body>
-    <h2 style="text-align: initial; color: rgb(196, 17, 17)">Users</h2>
-    <a href="demo1.html"
-      ><button class="btn" type="button" onclick="userCreate()">
-        Create
-      </button></a
-    ><br /><br /><br />
+    <h2 style="text-align: center; color: rgb(196, 17, 17)">Users Details</h2>
     <table id="table">
       <thead>
         <tr>
@@ -25,36 +20,71 @@
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody id="data"></tbody>
+      <tbody class="auto-index" id="data"></tbody>
     </table>
-    <form
-      id="form"
-      id="editForm"
-      onsubmit="event.preventDefault(setFormData(userUpdate()));"
-    >
+    <p style="color: green; text-align: center" id="message"></p>
+    <form id="myForm">
       <div>
-        <h2>Update Details</h2>
+        <h2>Create /Update Details</h2>
         <div>
           <input class="id" type="text" id="id" name="id" placeholder="id" />
-          <label>First Name:</label>
-          <input type="text" id="fname" name="fname" placeholder="First Name" />
+          <label>First Name*:</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            minlength="4"
+            maxlength="20"
+            placeholder="First Name"
+          />
+          <span class="validation-error hide" id="fnameError"
+            >First Name is Required</span
+          >
         </div>
         <div>
-          <label>Last Name:</label>
-          <input type="text" name="lname" id="lname" placeholder="Last Name" />
+          <label>Last Name*:</label>
+          <input
+            type="text"
+            name="lname"
+            id="lname"
+            minlength="1"
+            maxlength="4"
+            placeholder="Last Name"
+          />
+          <span class="validation-error hide" id="lnameError"
+            >Last Name is Required</span
+          >
         </div>
         <div>
-          <label>Email:</label>
-          <input type="text" name="email" id="email" placeholder="Email" />
+          <label>Email*:</label>
+          <input type="text" name="validate" id="email" placeholder="Email" />
+          <span class="validation-error hide" id="emailError"
+            >Email is Required</span
+          >
         </div>
         <div>
-          <label>Mobile:</label>
+          <label>Mobile*:</label>
           <input type="text" name="mobile" id="mobile" placeholder="Mobile" />
+          <span class="validation-error hide" id="mobileError"
+            >Mobile is Required</span
+          >
         </div>
       </div>
-      <button class="btn3" type="submit">Submit</button>
+      <button class="btn" id="div2" style="display: inline-block" type="submit">
+        Submit
+      </button>
+      <p style="color: red; text-align: center" id="mob"></p>
+      <p style="color: red; text-align: center" id="message1"></p>
+      <button
+        class="btn"
+        id="div3"
+        style="display: none"
+        type="submit"
+        onclick="userUpdate();hideButton();"
+      >
+        Update
+      </button>
     </form>
-
     <script src="demo.js"></script>
   </body>
 </html>
